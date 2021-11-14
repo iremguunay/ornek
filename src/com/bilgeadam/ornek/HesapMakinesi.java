@@ -24,5 +24,8 @@ public class HesapMakinesi {
         System.out.println(hm.carp(5, 7));
         System.out.println(hm.bol(7, 2));
         System.out.println(hm.cikar(15, 7));
+
+        int sonuc = hm.carp(5,7);
+        System.out.println("Sonuç: " + sonuc);
     }
 }
