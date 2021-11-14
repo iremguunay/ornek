@@ -55,6 +55,10 @@ public class Kisi {
         return maas * 12;
     }
 
+    public String adSoyadGetir(String ad, String soyad) {
+        return ad + " " + soyad;
+    }
+
     @Override
     public String toString() {
         return "Kisi{" +
