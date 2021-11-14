@@ -51,21 +51,28 @@ public class Kisi {
         this.maas = maas;
     }
 
-    public double yillikMaasGetir(double maas) {
-        return maas * 12;
+    public double yillikMaasGetir() {
+        return this.maas * 12;
     }
 
-    public String adSoyadGetir(String ad, String soyad) {
-        return ad + " " + soyad;
+    // public double yillikMaasGetir() {
+    // double yillikMaas = this.maas * 12;
+    // return yillikMaas;
+    // }
+
+    public String adSoyadGetir() {
+        return this.ad + " " + this.soyad;
     }
 
     @Override
     public String toString() {
         return "Kisi{" +
-                "no=" + no +
-                ", ad='" + ad + '\'' +
-                ", soyad='" + soyad + '\'' +
-                ", maas=" + maas +
+                "no= " + no +
+                ", ad= " + ad +
+                ", soyad= " + soyad +
+                ", maas= " + maas +
+                ", yıllık maaş= " + yillikMaasGetir() +
+                ", ad soyad= " + adSoyadGetir() +
                 '}';
     }
 }
