@@ -9,6 +9,9 @@ public class Kisi {
     private String soyad;
     private double maas;
 
+    // constructor overloading
+    // which constructor is suitable when creating an object, it will run
+
     public Kisi() {
     }
 
