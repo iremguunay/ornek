@@ -1,25 +1,41 @@
 package com.bilgeadam.ornek;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ReadFromConsoleSon {
 
-    private String isim;
-    private int yas;
+    static String isim;
+    static int yas;
+
 
     Scanner sc = new Scanner(System.in);
 
-    public void isimSor() {
+    public String isimSor() {
 
+        String ad = "";
         System.out.print("İsminizi giriniz:");
-        isim = sc.nextLine();
+        ad = sc.nextLine();
+
+        return ad;
 
     }
 
-    public void yasSor() {
+    public int yasSor() {
 
-        System.out.print("Yaşınızı giriniz:");
-        yas = sc.nextInt();
+        try {
+            int localYas = 0;
+            System.out.print("Yaşınızı giriniz:");
+            localYas = Integer.parseInt(sc.nextLine());
+
+            return localYas;
+        }
+        catch (NumberFormatException e) {
+
+            System.err.println("Hata: Yaş alanına sayı girmek zorundasınız!");
+            System.out.println();
+            return -99;
+        }
 
     }
 
@@ -35,8 +51,13 @@ public class ReadFromConsoleSon {
 
         ReadFromConsoleSon readConsole = new ReadFromConsoleSon();
 
-        readConsole.isimSor();
-        readConsole.yasSor();
+        isim = readConsole.isimSor();
+        yas = readConsole.yasSor();
+
+        while (yas < 0) {
+            yas = readConsole.yasSor();
+        }
+
         readConsole.sonucYazdir();
 
     }
